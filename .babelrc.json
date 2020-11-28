@@ -1,0 +1,6 @@
+{
+  "presets": ["@babel/env"],
+  "plugins": ["@babel/plugin-transform-arrow-functions"],
+  "compact": true,
+  "comments": false
+}
