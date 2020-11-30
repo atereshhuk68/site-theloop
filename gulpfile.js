@@ -1,18 +1,16 @@
 const { src, dest, watch, parallel, series } = require("gulp");
-const scss     = require("gulp-sass"),
-      prefix   = require("gulp-autoprefixer"),
-      sync     = require("browser-sync").create();
-      imagemin = require("gulp-imagemin"),
-      ttf2woff = require("gulp-ttf2woff"),
-      ttf2woff2 = require("gulp-ttf2woff2"),
-      fi = require('gulp-file-include'),
-
-      fs       = require("fs");
+const scss      = require("gulp-sass");
+const prefix    = require("gulp-autoprefixer");
+const sync      = require("browser-sync").create();
+const imagemin  = require("gulp-imagemin");
+const ttf2woff  = require("gulp-ttf2woff");
+const ttf2woff2 = require("gulp-ttf2woff2");
+const fi        = require('gulp-file-include');
+const fs        = require("fs");
 
 //! Создание файлов
 function createFiles () {
   createFolders();
-
   setTimeout(() => {
     fs.writeFile("newfolder/index.html", "!", function (err) {
       if ( err ) {
@@ -66,7 +64,7 @@ function browserSync () {
 
 //! HTML Parts
 const fileinclude =  function () {
-  return src(["app/pages/**/*.html"])
+  return src("app/pages/*.html")
   .pipe(
     fi({
       prefix: '@@',
@@ -78,17 +76,14 @@ const fileinclude =  function () {
 
 function watchFiles () {
   watch('app/scss/**/*.scss', convertStyles);
+  watch('app/_img', imagesComressed);
+  watch('app/pages/**/*.html', fileinclude);
+  watch("app/fonts/*.ttf", series(convertFonts, fontsStyle));
 
   watch('app/*.html').on("change", sync.reload);
   watch('app/css/*.css').on("change", sync.reload);
   watch('app/js/*.js').on("change", sync.reload);
-
-  watch('app/_img', imagesComressed);
-
-  watch('app/pages/**/*.html', fileinclude);
-
-  //* Fonts
-	watch("app/fonts/*.ttf", series(convertFonts, fontsStyle));
+  watch('app/pages/**/*.html').on("change", sync.reload);
 }
 
 exports.convertStyles     = convertStyles;
