@@ -1,0 +1,78 @@
+.collection {
+  background: $cream;
+  background: linear-gradient(90deg, $cream 0%, $cream 50%, #F4F4F4 50%, #F4F4F4 100%);
+
+  &__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 250px;
+  }
+
+  &__men,
+  &__women {
+    padding: 45px 0 0 35px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__image {
+    align-self: flex-end;
+  }
+
+  &__title {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    margin: 0;
+    color: $black;
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin: 0;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    color: $black;
+    margin-bottom: 35px;
+  }
+
+  &__button {
+    padding: 15px 35px;
+  }
+
+  //! Catalog
+  &__catalog {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+
+    .catalog-item {
+      position: relative;
+      text-align: right;
+
+      &__title {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        font-weight: 300;
+        font-size: 21px;
+        line-height: 26px;
+        letter-spacing: 0.03em;
+        color: $black;
+        text-transform: uppercase;
+      }
+
+      &:nth-child(even) {
+        background-color: $cream;
+      }
+      &:nth-child(odd) {
+        background-color: #F4F4F4;
+      }
+    }
+  }
+}

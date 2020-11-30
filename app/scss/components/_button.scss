@@ -1,0 +1,21 @@
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  border: none;
+
+  &--primary {
+    background-color: $accent;
+    color: white;
+    padding: 15px 25px;
+    font-size: 1em;
+
+    &:hover {
+      text-decoration: none;
+      background-color: darken($accent, 10%);
+    }
+  }
+}

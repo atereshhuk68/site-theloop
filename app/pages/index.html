@@ -1,13 +1,50 @@
 @@include("blocks/_header.html",
-  {
-    "title": "Магазин The Loop",
-    "desc": "Самый лучший магазин, где вы можете купить все что угодно"
-  }
+{
+"title": "Магазин The Loop",
+"desc": "Самый лучший магазин, где вы можете купить все что угодно"
+}
 )
 
-  <header class="header">
-    <div class="container header__container">
-      <div class="menu header__menu-main">
+<header class="header">
+  <div class="container header__container">
+    <div class="menu header__menu-main">
+      <ul class="menu__list">
+        <li class="menu__item"><a href="#" class="menu__link">Для мужчин</a><span class="arrow"></span></li>
+        <ul class="sub-menu">
+          <li class="sub-menu__item"><a href="#" class="sub-menu__link">Свитер</a></li>
+          <li class="sub-menu__item"><a href="#" class="sub-menu__link">Куртка</a></li>
+          <li class="sub-menu__item"><a href="#" class="sub-menu__link">Шапка</a></li>
+        </ul>
+      </ul>
+      <ul class="menu__list">
+        <li class="menu__item"><a href="#" class="menu__link">Для женщин</a><span class="arrow"></span></li>
+        <ul class="sub-menu">
+          <li class="sub-menu__item"><a href="#" class="sub-menu__link">Свитер</a></li>
+          <li class="sub-menu__item"><a href="#" class="sub-menu__link">Куртка</a></li>
+          <li class="sub-menu__item"><a href="#" class="sub-menu__link">Шапка</a></li>
+        </ul>
+      </ul>
+      <ul class="menu__list">
+        <li class="menu__item"><a href="#" class="menu__link">Для детей</a><span class="arrow"></span></li>
+        <ul class="sub-menu">
+          <li class="sub-menu__item"><a href="#" class="sub-menu__link">Свитер</a></li>
+          <li class="sub-menu__item"><a href="#" class="sub-menu__link">Куртка</a></li>
+          <li class="sub-menu__item"><a href="#" class="sub-menu__link">Шапка</a></li>
+        </ul>
+      </ul>
+    </div>
+    <div class="logo header__logo">
+      <a href="/" class="logo__link">
+        <img class="logo__image" src="img/logo.svg" alt="The Loop">
+      </a>
+    </div>
+    <div class="header__mobile-menu">
+      <button class="hamburger hamburger--collapse" type="button">
+        <span class="hamburger-box">
+          <span class="hamburger-inner"></span>
+        </span>
+      </button>
+      <div class="mobile-menu">
         <ul class="menu__list">
           <li class="menu__item"><a href="#" class="menu__link">Для мужчин</a><span class="arrow"></span></li>
           <ul class="sub-menu">
@@ -33,61 +70,240 @@
           </ul>
         </ul>
       </div>
-      <div class="logo header__logo">
-        <a href="/" class="logo__link">
-          <img class="logo__image" src="img/logo.svg" alt="The Loop">
-        </a>
-      </div>
-      <div class="header__mobile-menu">
-        <button class="hamburger hamburger--collapse" type="button">
-          <span class="hamburger-box">
-            <span class="hamburger-inner"></span>
-          </span>
-        </button>
-        <div class="mobile-menu">
-          <ul class="menu__list">
-            <li class="menu__item"><a href="#" class="menu__link">Для мужчин</a><span class="arrow"></span></li>
-            <ul class="sub-menu">
-              <li class="sub-menu__item"><a href="#" class="sub-menu__link">Свитер</a></li>
-              <li class="sub-menu__item"><a href="#" class="sub-menu__link">Куртка</a></li>
-              <li class="sub-menu__item"><a href="#" class="sub-menu__link">Шапка</a></li>
-            </ul>
-          </ul>
-          <ul class="menu__list">
-            <li class="menu__item"><a href="#" class="menu__link">Для женщин</a><span class="arrow"></span></li>
-            <ul class="sub-menu">
-              <li class="sub-menu__item"><a href="#" class="sub-menu__link">Свитер</a></li>
-              <li class="sub-menu__item"><a href="#" class="sub-menu__link">Куртка</a></li>
-              <li class="sub-menu__item"><a href="#" class="sub-menu__link">Шапка</a></li>
-            </ul>
-          </ul>
-          <ul class="menu__list">
-            <li class="menu__item"><a href="#" class="menu__link">Для детей</a><span class="arrow"></span></li>
-            <ul class="sub-menu">
-              <li class="sub-menu__item"><a href="#" class="sub-menu__link">Свитер</a></li>
-              <li class="sub-menu__item"><a href="#" class="sub-menu__link">Куртка</a></li>
-              <li class="sub-menu__item"><a href="#" class="sub-menu__link">Шапка</a></li>
-            </ul>
-          </ul>
+    </div>
+    <div class="menu header__menu">
+      <ul class="menu__list">
+        <li class="menu__item"><a href="#" class="menu__link">Оплата</a></li>
+        <li class="menu__item"><a href="#" class="menu__link">Доставка</a></li>
+      </ul>
+    </div>
+    <div class="header__cart">
+      <a href="#">
+        <img class="header__cart-icon" src="img/cart.svg" alt="">
+      </a>
+      <span class="counter">5</span>
+    </div>
+  </div>
+</header>
+
+<section class="header-hero">
+  <div class="container header-hero__container">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <div class="slider__content">
+            <h2 class="slider__title">Зимняя распродажа</h2>
+            <strong class="slider__attention">Скидки до 90%</strong>
+            <a href="#" class="button button--primary">Смотреть модели</a>
+          </div>
+          <div class="slider__product">
+            <img class="product-image" src="img/content/product.png" alt="Product">
+            <span class="product-old-price slider-old-price">9 900 &#8381;</span>
+            <span class="product-new-price slider-new-price">1 900 &#8381;</span>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slider__content">
+            <h2 class="slider__title">Зимняя распродажа</h2>
+            <strong class="slider__attention">Скидки до 90%</strong>
+            <a href="#" class="button button--primary">Смотреть модели</a>
+          </div>
+          <div class="slider__product">
+            <img class="product-image" src="img/content/product.png" alt="Product">
+            <span class="product-old-price slider-old-price">9 900 &#8381;</span>
+            <span class="product-new-price slider-new-price">1 900 &#8381;</span>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="slider__content">
+            <h2 class="slider__title">Зимняя распродажа</h2>
+            <strong class="slider__attention">Скидки до 90%</strong>
+            <a href="#" class="button button--primary">Смотреть модели</a>
+          </div>
+          <div class="slider__product">
+            <img class="product-image" src="img/content/product.png" alt="Product">
+            <span class="product-old-price slider-old-price">9 900 &#8381;</span>
+            <span class="product-new-price slider-new-price">1 900 &#8381;</span>
+          </div>
         </div>
       </div>
-      <div class="menu header__menu">
-        <ul class="menu__list">
-          <li class="menu__item"><a href="#" class="menu__link">Оплата</a></li>
-          <li class="menu__item"><a href="#" class="menu__link">Доставка</a></li>
-        </ul>
-      </div>
-      <div class="header__cart">
-        <a href="#">
-          <img class="header__cart-icon" src="img/cart.svg" alt="">
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+<section class="attention">
+  <div class="container attention__container">
+    <h2 class="attention__title">Бесплатная доставка <span>от 3000 &#8381;</span></h2>
+    <p class="attention__text">Сделайте заказ и получите подарок!</p>
+  </div>
+</section>
+
+<section class="collection">
+  <div class="container collection__container">
+    <div class="collection__men">
+      <div class="collection__content">
+        <h3 class="collection__title"><b>Мужская</b> коллекция</h3>
+        <p class="collection__text">Обувь, полуверы, костюмы</p>
+        <a href="#" class="button button--primary collection__button">
+          <svg width="21" height="8" viewBox="0 0 21 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.3536 4.35355C20.5488 4.15829 20.5488 3.84171 20.3536 3.64645L17.1716 0.464466C16.9763 0.269204 16.6597 0.269204 16.4645 0.464466C16.2692 0.659728 16.2692 0.976311 16.4645 1.17157L19.2929 4L16.4645 6.82843C16.2692 7.02369 16.2692 7.34027 16.4645 7.53553C16.6597 7.7308 16.9763 7.7308 17.1716 7.53553L20.3536 4.35355ZM0 4.5L20 4.5V3.5L0 3.5L0 4.5Z"
+              fill="white" />
+          </svg>
         </a>
-        <span class="counter">5</span>
+      </div>
+      <div class="collection__image">
+        <img src="img/man.png" alt="Man collection">
       </div>
     </div>
-  </header>
+    <div class="collection__women">
+      <div class="collection__content">
+        <h3 class="collection__title"><b>Женская</b> коллекция</h3>
+        <p class="collection__text">Обувь, полуверы, костюмы</p>
+        <a href="#" class="button button--primary collection__button">
+          <svg width="21" height="8" viewBox="0 0 21 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.3536 4.35355C20.5488 4.15829 20.5488 3.84171 20.3536 3.64645L17.1716 0.464466C16.9763 0.269204 16.6597 0.269204 16.4645 0.464466C16.2692 0.659728 16.2692 0.976311 16.4645 1.17157L19.2929 4L16.4645 6.82843C16.2692 7.02369 16.2692 7.34027 16.4645 7.53553C16.6597 7.7308 16.9763 7.7308 17.1716 7.53553L20.3536 4.35355ZM0 4.5L20 4.5V3.5L0 3.5L0 4.5Z"
+              fill="white" />
+          </svg>
+        </a>
+      </div>
+      <div class="collection__image">
+        <img src="img/woman.png" alt="Woman collection">
+      </div>
+    </div>
+    <div class="collection__catalog">
+      <div class="catalog-item">
+        <img class="catalog-item__image" src="img/content/catalog-image.png" alt="Catalog item">
+        <h4 class="catalog-item__title">Платья</h4>
+      </div>
+      <div class="catalog-item">
+        <img class="catalog-item__image" src="img/content/catalog-image.png" alt="Catalog item">
+        <h4 class="catalog-item__title">Платья</h4>
+      </div>
+      <div class="catalog-item">
+        <img class="catalog-item__image" src="img/content/catalog-image.png" alt="Catalog item">
+        <h4 class="catalog-item__title">Платья</h4>
+      </div>
+      <div class="catalog-item">
+        <img class="catalog-item__image" src="img/content/catalog-image.png" alt="Catalog item">
+        <h4 class="catalog-item__title">Платья</h4>
+      </div>
+      <div class="catalog-item">
+        <img class="catalog-item__image" src="img/content/catalog-image.png" alt="Catalog item">
+        <h4 class="catalog-item__title">Платья</h4>
+      </div>
+      <div class="catalog-item">
+        <img class="catalog-item__image" src="img/content/catalog-image.png" alt="Catalog item">
+        <h4 class="catalog-item__title">Платья</h4>
+      </div>
+      <div class="catalog-item">
+        <img class="catalog-item__image" src="img/content/catalog-image.png" alt="Catalog item">
+        <h4 class="catalog-item__title">Платья</h4>
+      </div>
+      <div class="catalog-item">
+        <img class="catalog-item__image" src="img/content/catalog-image.png" alt="Catalog item">
+        <h4 class="catalog-item__title">Платья</h4>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="catalog section--margin">
+  <div class="container catalog__container">
+    <h2 class="section-title">Новые модели</h2>
+    <div class="catalog__wrapper">
+      <div class="card catalog__card">
+        <div class="card__image">
+          <img class="card__picture" src="img/content/card-product.png" alt="Card product">
+        </div>
+        <h3 class="card__title">Коктейльное платье</h3>
+        <span class="card__price">40 000 &#8381;</span>
+        <span class="border"></span>
+      </div>
+      <div class="card catalog__card">
+        <div class="card__image">
+          <img class="card__picture" src="img/content/card-product.png" alt="Card product">
+        </div>
+        <h3 class="card__title">Коктейльное платье</h3>
+        <span class="card__price">40 000 &#8381;</span>
+        <span class="border"></span>
+      </div>
+      <div class="card catalog__card">
+        <div class="card__image">
+          <img class="card__picture" src="img/content/card-product.png" alt="Card product">
+        </div>
+        <h3 class="card__title">Коктейльное платье</h3>
+        <span class="card__price">40 000 &#8381;</span>
+        <span class="border"></span>
+      </div>
+      <div class="card catalog__card">
+        <div class="card__image">
+          <img class="card__picture" src="img/content/card-product.png" alt="Card product">
+        </div>
+        <h3 class="card__title">Коктейльное платье</h3>
+        <span class="card__price">40 000 &#8381;</span>
+        <span class="border"></span>
+      </div>
+    </div>
+    <a href="" class="button button--primary catalog__button">Все модели <svg width="21" height="8" viewBox="0 0 21 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3536 4.35355C20.5488 4.15829 20.5488 3.84171 20.3536 3.64645L17.1716 0.464466C16.9763 0.269204 16.6597 0.269204 16.4645 0.464466C16.2692 0.659728 16.2692 0.976311 16.4645 1.17157L19.2929 4L16.4645 6.82843C16.2692 7.02369 16.2692 7.34027 16.4645 7.53553C16.6597 7.7308 16.9763 7.7308 17.1716 7.53553L20.3536 4.35355ZM0 4.5L20 4.5V3.5L0 3.5L0 4.5Z" fill="white" /></svg></a>
+  </div>
+</section>
+
+<section class="attention attention-flex-row">
+  <div class="container attention__container">
+    <h2 class="attention__title">Получайте скидки и подарки</h2>
+    <form action="#" method="POST" class="form">
+      <input class="form__field" type="email" name="user-email" placeholder="Ваш e-mail">
+      <input class="button button--primary form__button" type="submit" value="Подписаться">
+    </form>
+  </div>
+</section>
+
+<section class="catalog section--margin">
+  <div class="container catalog__container">
+    <h2 class="section-title">Скидка до 90%</h2>
+    <div class="catalog__wrapper">
+      <div class="card catalog__card">
+        <div class="card__image">
+          <img class="card__picture" src="img/content/card-product.png" alt="Card product">
+        </div>
+        <h3 class="card__title">Коктейльное платье</h3>
+        <span class="card__price">40 000 &#8381;</span>
+        <span class="border"></span>
+      </div>
+      <div class="card catalog__card">
+        <div class="card__image">
+          <img class="card__picture" src="img/content/card-product.png" alt="Card product">
+        </div>
+        <h3 class="card__title">Коктейльное платье</h3>
+        <span class="card__price">40 000 &#8381;</span>
+        <span class="border"></span>
+      </div>
+      <div class="card catalog__card">
+        <div class="card__image">
+          <img class="card__picture" src="img/content/card-product.png" alt="Card product">
+        </div>
+        <h3 class="card__title">Коктейльное платье</h3>
+        <span class="card__price">40 000 &#8381;</span>
+        <span class="border"></span>
+      </div>
+      <div class="card catalog__card">
+        <div class="card__image">
+          <img class="card__picture" src="img/content/card-product.png" alt="Card product">
+        </div>
+        <h3 class="card__title">Коктейльное платье</h3>
+        <span class="card__price">40 000 &#8381;</span>
+        <span class="border"></span>
+      </div>
+    </div>
+    <a href="" class="button button--primary catalog__button">Все модели <svg width="21" height="8" viewBox="0 0 21 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.3536 4.35355C20.5488 4.15829 20.5488 3.84171 20.3536 3.64645L17.1716 0.464466C16.9763 0.269204 16.6597 0.269204 16.4645 0.464466C16.2692 0.659728 16.2692 0.976311 16.4645 1.17157L19.2929 4L16.4645 6.82843C16.2692 7.02369 16.2692 7.34027 16.4645 7.53553C16.6597 7.7308 16.9763 7.7308 17.1716 7.53553L20.3536 4.35355ZM0 4.5L20 4.5V3.5L0 3.5L0 4.5Z" fill="white" /></svg></a>
+  </div>
+</section>
 
 @@include("blocks/_footer.html",
-  {
-    "desc": "Самый лучший магазин, где вы можете купить все что угодно"
-  }
+{
+"desc": "Самый лучший магазин, где вы можете купить все что угодно"
+}
 )
