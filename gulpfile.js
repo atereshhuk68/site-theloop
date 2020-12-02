@@ -8,6 +8,10 @@ const ttf2woff2 = require("gulp-ttf2woff2");
 const fi        = require('gulp-file-include');
 const fs        = require("fs");
 
+const htmlmin = require("gulp-htmlmin");
+const webphtml = require("gulp-webp-html");
+const toWebp = require("gulp-webp");
+
 //! Создание файлов
 function createFiles () {
   createFolders();
@@ -47,12 +51,6 @@ function convertStyles () {
   .pipe(dest('app/css'));
 };
 
-function imagesComressed () {
-  return src('app/_img/*.{jpg,png,svg}')
-  .pipe(imagemin())
-  .pipe(dest('app/img'))
-}
-
 function browserSync () {
   sync.init({
     server: {
@@ -60,6 +58,12 @@ function browserSync () {
         open: "local"
     }
 });
+}
+
+function convertImgs () {
+  return src('app/img/**/*.jpg')
+  .pipe(toWebp())
+  .pipe(dest('app/img'))
 }
 
 //! HTML Parts
@@ -88,16 +92,22 @@ function watchFiles () {
 
 exports.convertStyles     = convertStyles;
 exports.watchFiles        = watchFiles;
+exports.convertImgs        = convertImgs;
 exports.browserSync       = browserSync;
 exports.imagesComressed   = imagesComressed;
 //! Папки и файлы
 exports.struct       = createFiles;
 
-exports.default = parallel(fileinclude, convertStyles, browserSync, watchFiles, series(convertFonts, fontsStyle));
+exports.default = parallel(fileinclude, convertStyles, browserSync, watchFiles, convertImgs);
 
 //! Build
 function movehtml () {
   return src('app/*.html')
+  .pipe(webphtml())
+  .pipe(htmlmin({
+    collapseWhitespace: true,
+    removeComments: true
+  }))
   .pipe(dest('dist'))
 }
 
@@ -106,23 +116,30 @@ function moveCss () {
   .pipe(dest('dist/css'))
 }
 
+function moveFonts () {
+  return src('app/fonts/*')
+  .pipe(dest('dist/fonts'))
+}
+
+
 function moveJS () {
   return src('app/js/*.js')
   .pipe(dest('dist/js'))
 }
 
-function moveImgs () {
-  return src('app/img/*')
+function imagesComressed () {
+  return src('app/img/**/*.{jpg,png,svg}')
+  .pipe(imagemin())
   .pipe(dest('dist/img'))
 }
 
 exports.movehtml = movehtml;
 exports.moveCss = moveCss;
 exports.moveJS = moveJS;
-exports.moveImgs = moveImgs;
+exports.moveFonts = moveFonts;
 exports.fileinclude = fileinclude;
 
-exports.build = series(movehtml, moveCss, moveJS, moveImgs);
+exports.build = series(movehtml, moveCss, moveJS, moveFonts, imagesComressed);
 
 
 function convertFonts() {
