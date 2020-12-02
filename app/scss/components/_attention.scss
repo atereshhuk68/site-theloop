@@ -18,6 +18,10 @@
     span {
       font-weight: 300;
     }
+
+    @media (max-width: 1179px) {
+      font-size: 18px;
+    }
   }
 
   &__text {
@@ -26,20 +30,42 @@
     font-size: 21px;
     line-height: 26px;
     text-align: center;
+
+    @media (max-width: 879px) {
+      font-size: 14px;
+    }
   }
 
   &-flex-row {
     .attention__container {
       @include dfcb();
+
+      @media (max-width: 1179px) {
+        flex-direction: column;
+      }
+
+      @media (max-width: 519px) {
+        align-items: stretch;
+      }
     }
 
     .form {
       @include dfcb();
 
+      @media (max-width: 519px) {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
       &__field {
         padding: 12px 20px;
         line-height: 1;
         margin-right: 30px;
+
+        @media (max-width: 519px) {
+          margin-right: 0;
+          margin-bottom: 15px;
+        }
       }
 
       &__button {

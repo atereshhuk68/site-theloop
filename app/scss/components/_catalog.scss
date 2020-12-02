@@ -8,6 +8,14 @@
     letter-spacing: 0.04em;
     text-transform: uppercase;
     color: $black;
+
+    @media (max-width: 767px) {
+      font-size: 32px;
+    }
+
+    @media (max-width: 574px) {
+      font-size: 24px;
+    }
   }
 
   &__container {
@@ -18,9 +26,26 @@
 
   &__wrapper {
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 0 30px;
     margin: 100px 0;
+
+    @media (max-width: 1109px) {
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: space-between;
+      grid-gap: 30px;
+    }
+
+    @media (max-width: 767px) {
+      margin: 60px 0;
+    }
+
+    @media (max-width: 574px) {
+      grid-template-columns: 1fr;
+      justify-content: center;
+
+      margin: 30px 0;
+    }
   }
 
   &__card {

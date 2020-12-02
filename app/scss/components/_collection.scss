@@ -6,6 +6,10 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 250px;
+
+    @media (max-width: 574px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__men,
@@ -13,6 +17,11 @@
     padding: 45px 0 0 35px;
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 574px) {
+      grid-column: span 1;
+      padding: 25px 0 0 25px;
+    }
   }
 
   &__image {
@@ -49,7 +58,11 @@
   &__catalog {
     grid-column: span 2;
     display: grid;
-    grid-template-columns: repeat(4, 25%);
+    grid-template-columns: repeat(4, 1fr);
+
+    @media (max-width: 574px) {
+      display: none;
+    }
 
     .catalog-item {
       position: relative;
